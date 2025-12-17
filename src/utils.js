@@ -27,9 +27,23 @@ export const calculate = (num1, operator, num2) => {
   }
 }
 
-export const gcd = (a, b) => {
+export const nod = (a, b) => {
   if (b === 0) {
     return Math.abs(a)
   }
-  return gcd(b, a % b)
+  return nod(b, a % b)
+}
+
+export const generateProgression = (start, step, length) => {
+  const progression = []
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + i * step)
+  }
+  return progression
+}
+
+export const hideElementInProgression = (progression, hiddenIndex) => {
+  const hiddenProgression = [...progression]
+  hiddenProgression[hiddenIndex] = '..'
+  return hiddenProgression.join(' ')
 }
