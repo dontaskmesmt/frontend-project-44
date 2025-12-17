@@ -27,11 +27,11 @@ export const calculate = (num1, operator, num2) => {
   }
 }
 
-export const nod = (a, b) => {
+export const gcd = (a, b) => {
   if (b === 0) {
     return Math.abs(a)
   }
-  return nod(b, a % b)
+  return gcd(b, a % b)
 }
 
 export const generateProgression = (start, step, length) => {
@@ -46,4 +46,18 @@ export const hideElementInProgression = (progression, hiddenIndex) => {
   const hiddenProgression = [...progression]
   hiddenProgression[hiddenIndex] = '..'
   return hiddenProgression.join(' ')
+}
+
+export const isPrime = (num) => {
+  if (num < 2) {
+    return false
+  }
+  
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
+      return false
+    }
+  }
+  
+  return true
 }
