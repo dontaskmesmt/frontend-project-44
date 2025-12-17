@@ -5,7 +5,7 @@ const generateRound = () => {
   const number = getRandomNumber(1, 100)
   const question = String(number)
   const correctAnswer = isPrime(number) ? 'yes' : 'no'
-  
+
   return { question, correctAnswer }
 }
 

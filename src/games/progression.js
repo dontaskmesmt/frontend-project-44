@@ -6,11 +6,11 @@ const generateRound = () => {
   const step = getRandomNumber(2, 10)
   const length = getRandomNumber(5, 10)
   const hiddenIndex = getRandomNumber(0, length - 1)
-  
+
   const progression = generateProgression(start, step, length)
   const question = hideElementInProgression(progression, hiddenIndex)
   const correctAnswer = String(progression[hiddenIndex])
-  
+
   return { question, correctAnswer }
 }
 
